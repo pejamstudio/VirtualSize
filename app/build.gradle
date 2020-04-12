@@ -52,3 +52,8 @@ sceneform.asset('sampledata/lion.fbx',
         'default',
         'sampledata/lion.sfa',
         'src/main/res/raw/lion')
+
+sceneform.asset('sampledata/iphone.fbx',
+        'default',
+        'sampledata/iphone.sfa',
+        'src/main/res/raw/iphone')

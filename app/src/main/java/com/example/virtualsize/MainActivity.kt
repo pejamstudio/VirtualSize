@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity(), Scene.OnUpdateListener {
         val updateAugmentedImage = frame?.getUpdatedTrackables(AugmentedImage::class.java)
         for (image in updateAugmentedImage!!) {
             if(image.trackingState == TrackingState.TRACKING){
-                if(image.name.equals("lion")){
-                    val node = MyARNode(this, R.raw.lion)
+                if(image.name.equals("iphone")){
+                    val node = MyARNode(this, R.raw.iphone)
                     node.image = image
                     arView.scene.addChild(node)
                 }
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity(), Scene.OnUpdateListener {
             return false
         }
         val augmentedImageDatabase = AugmentedImageDatabase(session)
-        augmentedImageDatabase.addImage("lion", bitmap)
+        augmentedImageDatabase.addImage("iphone", bitmap)
         config.setAugmentedImageDatabase(augmentedImageDatabase)
         config.focusMode = Config.FocusMode.FIXED
         return true
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity(), Scene.OnUpdateListener {
 
     private fun loadImage(): Bitmap? {
         try {
-            val it = assets.open("lion-qr.png")
+            val it = assets.open("iphone.png")
             return BitmapFactory.decodeStream(it)
         }catch (e: Exception){
             e.printStackTrace()
